@@ -7,7 +7,8 @@ if [ ! -d $EMB_PATH ]; then
 fi
 
 cd embeddings
-wget http://nlp.stanford.edu/data/glove.840B.300d.zip
+# wget http://nlp.stanford.edu/data/glove.840B.300d.zip
+wget https://storage.googleapis.com/mag-tongplw/mag/glove.840B.300d.zip
 unzip glove.840B.300d.zip
 rm glove.840B.300d.zip
 wget https://dada.cs.washington.edu/qasrl/data/glove_50_300_2.zip
