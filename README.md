@@ -8,14 +8,14 @@ This repository contains code and models for replicating results from the follow
 Part of the codebase is extended from [lsgn](https://github.com/luheng/lsgn) and [e2e-coref](https://github.com/kentonl/e2e-coref). 
 
 ### Requirements
-* Python 2.7
-  * TensorFlow 1.8.0
+* Python > 3.6
+  * TensorFlow 1.14.0
   * pyhocon (for parsing the configurations)
   * [tensorflow_hub](https://www.tensorflow.org/hub/) (for loading ELMo)
 
 ## Getting Started
-* Python 2.7
-* TensorFlow 1.8.0
+* Python > 3.6
+* TensorFlow 1.14.0
 * pyhocon (for parsing the configurations)
 * tensorflow_hub (for ELMo)
 
