@@ -16,7 +16,8 @@ if [ ! -f "glove.840B.300d.txt" ]; then
 fi
 
 if [ ! -f "glove_50_300_2.txt" ]; then
-  wget https://dada.cs.washington.edu/qasrl/data/glove_50_300_2.zip
+  # wget https://dada.cs.washington.edu/qasrl/data/glove_50_300_2.zip
+  wget https://storage.googleapis.com/mag-tongplw/mag/glove_50_300_2.zip
   unzip glove_50_300_2.zip
   rm glove_50_300_2.zip
 fi
