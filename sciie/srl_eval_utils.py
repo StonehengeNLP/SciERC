@@ -6,7 +6,7 @@ import operator
 import os
 from os.path import join
 import subprocess
-import relation_metrics
+from . import relation_metrics
 
 
 _SRL_CONLL_EVAL_SCRIPT  = "run_conll_eval.sh"

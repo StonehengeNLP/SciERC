@@ -7,10 +7,10 @@ import argparse
 sys.path.append(os.getcwd())
 import tensorflow as tf
 
-from lsgn_data import LSGNData
-from lsgn_evaluator_writer import LSGNEvaluator
-from srl_model import SRLModel
-import util
+from .lsgn_data import LSGNData
+from .lsgn_evaluator_writer import LSGNEvaluator
+from .srl_model import SRLModel
+from . import util
 
 
 def main():

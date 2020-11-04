@@ -11,10 +11,10 @@ import shutil
 import numpy as np
 import tensorflow as tf
 
-from lsgn_data import LSGNData
-from lsgn_evaluator import LSGNEvaluator
-from srl_model import SRLModel
-import util
+from .lsgn_data import LSGNData
+from .lsgn_evaluator import LSGNEvaluator
+from .srl_model import SRLModel
+from . import util
 
 
 def copy_checkpoint(source, target):

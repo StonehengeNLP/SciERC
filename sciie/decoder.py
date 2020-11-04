@@ -8,11 +8,11 @@ import numpy as np
 
 import tensorflow as tf
 
-import coref_model as cm
-import inference_utils
-import input_utils
-import srl_model as srl
-import util
+from . import coref_model as cm
+from . import inference_utils
+from . import input_utils
+from . import srl_model as srl
+from . import util
 
 if __name__ == "__main__":
   util.set_gpus()
