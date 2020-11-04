@@ -7,9 +7,9 @@ import numpy as np
 import random
 import threading
 
-from input_utils import *
-import util
-import srl_eval_utils
+from .input_utils import *
+from . import util
+from . import srl_eval_utils
 
 # Names for the "given" tensors.
 _input_names = [

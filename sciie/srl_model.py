@@ -7,13 +7,13 @@ import os
 import random
 import tensorflow as tf
 
-import util
-import conll
-from lsgn_data import LSGNData
+from . import util
+from . import conll
+from .lsgn_data import LSGNData
 
-from embedding_helper import get_embeddings
-from input_utils import *
-from model_utils import *
+from .embedding_helper import get_embeddings
+from .input_utils import *
+from .model_utils import *
 
 K = tf.keras.backend
 

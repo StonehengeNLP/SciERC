@@ -35,6 +35,6 @@ if [ ! -d $DATA_PATH/processed_data ]; then
   rm $DATA_PATH/sciERC_processed.tar.gz
 fi
 
-python3 scripts/filter_embeddings.py ${EMB_PATH}/glove.840B.300d.txt ${EMB_PATH}/glove.840B.300d.txt.filtered ${DATA_PATH}/processed_data/json/train.json ${DATA_PATH}/processed_data/json/dev.json
+python3 scripts/filter_embeddings.py $EMB_PATH/glove.840B.300d.txt $EMB_PATH/glove.840B.300d.txt.filtered $DATA_PATH/processed_data/json/train.json $DATA_PATH/processed_data/json/dev.json
 
-python3 scripts/get_char_vocab.py 
+python3 scripts/get_char_vocab.py $SCIIE_PATH

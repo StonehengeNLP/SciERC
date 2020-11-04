@@ -1,13 +1,13 @@
 import datetime
 import time
 
-import coref_metrics
-import debug_utils
-import inference_utils
-from input_utils import pad_batch_tensors
-import operator
-import srl_eval_utils
-import util
+from . import coref_metrics
+from . import debug_utils
+from . import inference_utils
+from .input_utils import pad_batch_tensors
+from . import operator
+from . import srl_eval_utils
+from . import util
 import json
 import pdb
 from JsonSerializer import MyEncoder

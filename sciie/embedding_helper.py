@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-import util
+from . import util
 
 
 def get_embeddings(data, sentences, text_len, context_word_emb, head_word_emb, char_index, lm_emb,

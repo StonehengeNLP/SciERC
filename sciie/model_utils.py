@@ -1,9 +1,9 @@
 import math
 import numpy as np
 import tensorflow as tf
-import util
 
-import srl_ops
+from . import util
+from . import srl_ops
 
 def flatten_emb(emb):
   num_sentences = tf.shape(emb)[0]
