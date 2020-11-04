@@ -1,4 +1,4 @@
-tensorFlow==1.14.0 
+tensorflow==1.14.0 
 pyhocon 
 tensorflow_hub
 scikit-learn==0.22.2
