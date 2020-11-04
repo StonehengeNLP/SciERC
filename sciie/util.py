@@ -8,7 +8,7 @@ import numpy as np
 import tensorflow as tf
 import pyhocon
 
-SCIIE_DIR = os.path.dirname(os.path.abspath(__file__))
+SCIIE_DIR = os.path.dirname(os.path.realpath(__file__))
 
 def make_summary(value_dict):
   return tf.Summary(value=[tf.Summary.Value(tag=k, simple_value=v) for k,v in list(value_dict.items())])

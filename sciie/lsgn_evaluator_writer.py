@@ -5,12 +5,12 @@ from . import coref_metrics
 from . import debug_utils
 from . import inference_utils
 from .input_utils import pad_batch_tensors
-from . import operator
+import operator
 from . import srl_eval_utils
 from . import util
 import json
 import pdb
-from JsonSerializer import MyEncoder
+from .JsonSerializer import MyEncoder
 
 
 class LSGNEvaluator(object):

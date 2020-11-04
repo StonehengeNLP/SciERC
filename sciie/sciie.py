@@ -1,7 +1,7 @@
-from .test_single import run_experiment
+from .write_single import run_experiment
 from .util import SCIIE_DIR
 
-def hash_list(l:list):
+def _hash_list(l:list):
     return hash(str(l))
 
 def extract(abstracts:list):
@@ -12,7 +12,7 @@ def extract(abstracts:list):
             "sentences": abstract,
             "ner": [[] for _ in range(len(abstract))],
             "relation": [[] for _ in range(len(abstract))],
-            "doc_key": hash_list(abstract)} for abstract in abstracts]
+            "doc_key": _hash_list(abstract)} for abstract in abstracts]
         
     with open(SCIIE_DIR + '/data/processed_data/json/dev.json', 'w') as f:
         for line in data:

@@ -11,3 +11,9 @@ g++ -std=c++11 -shared $SCIIE_PATH/srl_kernels.cc -o $SCIIE_PATH/srl_kernels.so 
     -I$TF_INC -I$TF_INC/external/nsync/public \
     -L$TF_LIB -ltensorflow_framework \
     -fPIC -O2 -D_GLIBCXX_USE_CXX11_ABI=1
+
+SCIIE_PACK_ORIGIN=$(python3 -c 'import importlib; print(importlib.util.find_spec("sciie").origin)')
+SCIIE_PACK_PATH=$(dirname $SCIIE_PACK_ORIGIN)
+
+cd 
+cp $SCIIE_PATH/srl_kernels.so $SCIIE_PACK_PATH
