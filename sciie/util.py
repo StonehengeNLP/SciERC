@@ -1,7 +1,3 @@
-
-
-
-
 import os
 import errno
 import collections
