@@ -15,19 +15,8 @@ from .lsgn_evaluator_writer import LSGNEvaluator
 from .srl_model import SRLModel
 from . import util
 
-if __name__ == "__main__":
-  #if "GPU" in os.environ:
-  #  util.set_gpus(int(os.environ["GPU"]))
-  #else:
-  util.set_gpus()
-
-  if len(sys.argv) > 1:
-    name = sys.argv[1]
-    print("Running experiment: {} (from command-line argument).".format(name))
-  else:
-    name = os.environ["EXP"]
-    print("Running experiment: {} (from environment variable).".format(name))
-
+def run_experiment(name):
+      
   config = util.get_config("experiments.conf")[name]
   config["log_dir"] = util.mkdirs(os.path.join(config["log_root"], name))
 
@@ -58,3 +47,18 @@ if __name__ == "__main__":
     tf.global_variables_initializer().run()
     saver.restore(session, checkpoint_path)
     evaluator.evaluate(session, data, model.predictions, model.loss)
+
+if __name__ == "__main__":
+  #if "GPU" in os.environ:
+  #  util.set_gpus(int(os.environ["GPU"]))
+  #else:
+  util.set_gpus()
+
+  if len(sys.argv) > 1:
+    name = sys.argv[1]
+    print("Running experiment: {} (from command-line argument).".format(name))
+  else:
+    name = os.environ["EXP"]
+    print("Running experiment: {} (from environment variable).".format(name))
+
+  run_experiment(name)

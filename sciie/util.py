@@ -8,6 +8,8 @@ import numpy as np
 import tensorflow as tf
 import pyhocon
 
+SCIIE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 def make_summary(value_dict):
   return tf.Summary(value=[tf.Summary.Value(tag=k, simple_value=v) for k,v in list(value_dict.items())])
 
@@ -15,8 +17,10 @@ def flatten(l):
   return [item for sublist in l for item in sublist]
 
 def get_config(filename):
+  if not os.path.isfile(filename):
+    filename = SCIIE_DIR + '/' + filename  
   return pyhocon.ConfigFactory.parse_file(filename)
-
+        
 def print_config(config):
   print(pyhocon.HOCONConverter.convert(config, "hocon"))
 
