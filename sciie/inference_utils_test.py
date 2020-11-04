@@ -1,5 +1,5 @@
 import numpy as np
-from inference_utils import dp_decode
+from .inference_utils import dp_decode
 
 def dp_decode_test():
   srl_labels_inv = ["", "ARG0", "ARG1", "AM-TMP"]

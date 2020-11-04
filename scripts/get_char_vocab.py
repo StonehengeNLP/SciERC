@@ -18,7 +18,6 @@ def get_char_vocab(input_filenames, output_filename):
       f.write(u"{}\n".format(char))
   print(("Wrote {} characters to {}".format(len(vocab), output_filename)))
 
-
-# get_char_vocab(["../data/sciie.{}.jsona".format(partition) for partition in ("train", "dev")], "char_vocab.english.txt")
-get_char_vocab(["./data/processed_data/json/{}.json".format(partition) for partition in ("train", "dev", "test")], "char_vocab.english.txt")
-
+if __name__ == '__main__':
+  sciie_path = sys.argv[1]
+  get_char_vocab([sciie_path+'/data/processed_data/json/{}.json'.format(partition) for partition in ("train", "dev", "test")], sciie_path+'/char_vocab.english.txt')

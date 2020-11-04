@@ -11,9 +11,9 @@ import random
 import numpy as np
 import tensorflow as tf
 
-from lsgn_data import LSGNData
-from srl_model import SRLModel
-import util
+from . lsgn_data import LSGNData
+from . srl_model import SRLModel
+from . import util
 
 
 if __name__ == "__main__":

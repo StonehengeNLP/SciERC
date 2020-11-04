@@ -10,7 +10,7 @@ import h5py
 import numpy as np
 import json
 print((tf.__version__))
-from util import set_gpus
+from .util import set_gpus
 def Elmo(fn, outfn):
       with open(fn) as f:
             dev_examples = [json.loads(jsonline) for jsonline in f.readlines()]

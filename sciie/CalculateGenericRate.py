@@ -1,7 +1,7 @@
 import json
 import pdb
-from BuildKG import Map2doc
-from relation_metrics import span_metric
+from .BuildKG import Map2doc
+from .relation_metrics import span_metric
 def ReadJson(senfn):
     docs = {}
     with open(senfn) as f:
