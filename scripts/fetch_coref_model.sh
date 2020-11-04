@@ -1,5 +1,8 @@
-SCIIE_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; cd ../sciie ; pwd -P )"
+SCIIE_PACK_ORIGIN=$(python3 -c 'import importlib; print(importlib.util.find_spec("sciie").origin)')
+SCIIE_PATH=$(dirname $SCIIE_PACK_ORIGIN)
 LOGS_PATH=$SCIIE_PATH/logs
+
+cd 
 
 if [ ! -d $LOGS_PATH ]; then
     mkdir -p $LOGS_PATH

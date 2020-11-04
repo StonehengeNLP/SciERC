@@ -1,8 +1,10 @@
 #!/bin/bash
 
-SCIIE_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; cd ../sciie ; pwd -P )"
+SCRIPT_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+SCIIE_PACK_ORIGIN=$(python3 -c 'import importlib; print(importlib.util.find_spec("sciie").origin)')
+SCIIE_PACK_PATH=$(dirname $SCIIE_PACK_ORIGIN)
 
-EMB_PATH=$SCIIE_PATH/embeddings
+EMB_PATH=$SCIIE_PACK_PATH/embeddings
 if [ ! -d $EMB_PATH ]; then
   mkdir -p $EMB_PATH
 fi
@@ -22,7 +24,7 @@ if [ ! -f $EMB_PATH/glove_50_300_2.txt ]; then
 fi
 
 
-DATA_PATH=$SCIIE_PATH/data
+DATA_PATH=$SCIIE_PACK_PATH/data
 if [ ! -d $DATA_PATH ]; then
   mkdir -p $DATA_PATH
 fi
@@ -35,6 +37,6 @@ if [ ! -d $DATA_PATH/processed_data ]; then
   rm $DATA_PATH/sciERC_processed.tar.gz
 fi
 
-python3 scripts/filter_embeddings.py $EMB_PATH/glove.840B.300d.txt $EMB_PATH/glove.840B.300d.txt.filtered $DATA_PATH/processed_data/json/train.json $DATA_PATH/processed_data/json/dev.json
+python3 $SCRIPT_PATH/filter_embeddings.py $EMB_PATH/glove.840B.300d.txt $EMB_PATH/glove.840B.300d.txt.filtered $DATA_PATH/processed_data/json/train.json $DATA_PATH/processed_data/json/dev.json
 
-python3 scripts/get_char_vocab.py $SCIIE_PATH
+python3 $SCRIPT_PATH/get_char_vocab.py $SCIIE_PACK_PATH

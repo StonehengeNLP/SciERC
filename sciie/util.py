@@ -16,10 +16,20 @@ def make_summary(value_dict):
 def flatten(l):
   return [item for sublist in l for item in sublist]
 
+def _pad_all_path_values(nested_dictionary):
+    for key, value in nested_dictionary.items():
+        if isinstance(value, dict):
+            _pad_all_path_values(value)
+        else:
+            if isinstance(nested_dictionary[key], str) and ('path' in key or 'log' in key):
+              nested_dictionary[key] = SCIIE_DIR + '/' + nested_dictionary[key]
+
 def get_config(filename):
   if not os.path.isfile(filename):
     filename = SCIIE_DIR + '/' + filename  
-  return pyhocon.ConfigFactory.parse_file(filename)
+  config = pyhocon.ConfigFactory.parse_file(filename)
+  _pad_all_path_values(config)
+  return config
         
 def print_config(config):
   print(pyhocon.HOCONConverter.convert(config, "hocon"))
